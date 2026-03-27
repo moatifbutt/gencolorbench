@@ -405,11 +405,25 @@
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
       margin: 2.5rem 0;
-      align-items: start;
+      align-items: stretch;
     }
 
     .figures-side-by-side .figure {
       margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .figures-side-by-side .figure img {
+      flex: 1;
+      object-fit: contain;
+      min-height: 300px;
+      max-height: 400px;
+      background: #fafafa;
+    }
+
+    .figures-side-by-side .figure-caption {
+      flex-shrink: 0;
     }
 
     .figures-row {
@@ -1062,12 +1076,172 @@
             </thead>
             <tbody>
               <tr>
-                <td colspan="18" style="text-align: center; padding: 3rem; color: var(--color-text-muted); font-style: italic;">
-                  Results coming soon...
-                </td>
+                <td>GPT-Image-1.5</td>
+                <td>1024</td>
+                <td><span class="model-type">API</span></td>
+                <td class="rank-1">76.63</td><td class="rank-1">52.47</td><td class="rank-1">50.82</td>
+                <td class="rank-1">45.72</td><td class="rank-1">36.65</td><td class="rank-1">38.38</td>
+                <td class="rank-1">42.84</td><td class="rank-1">34.56</td><td class="rank-1">39.72</td>
+                <td class="rank-1">35.28</td><td class="rank-1">28.47</td><td class="rank-1">23.65</td>
+                <td class="rank-1">51.82</td><td class="rank-1">48.12</td><td class="rank-1">49.91</td>
+              </tr>
+              <tr>
+                <td>Pixart Alpha</td>
+                <td>1024</td>
+                <td><span class="model-type">DM</span></td>
+                <td class="rank-2">69.82</td><td>25.88</td><td>16.91</td>
+                <td>13.23</td><td>5.76</td><td>4.74</td>
+                <td>10.78</td><td>3.56</td><td>2.88</td>
+                <td>15.55</td><td>6.54</td><td>5.62</td>
+                <td>4.80</td><td>2.40</td><td>2.03</td>
+              </tr>
+              <tr>
+                <td>SD 3.5</td>
+                <td>1024</td>
+                <td><span class="model-type">DM</span></td>
+                <td class="rank-3">68.61</td><td>24.12</td><td>15.76</td>
+                <td>17.40</td><td>7.56</td><td>6.21</td>
+                <td>13.64</td><td>4.50</td><td>3.69</td>
+                <td>25.44</td><td>10.70</td><td>9.20</td>
+                <td>7.80</td><td>3.60</td><td>2.86</td>
+              </tr>
+              <tr>
+                <td>Pixart Sigma</td>
+                <td>1024</td>
+                <td><span class="model-type">DM</span></td>
+                <td>68.05</td><td>27.48</td><td>16.15</td>
+                <td>15.00</td><td>6.48</td><td>5.31</td>
+                <td>12.66</td><td>4.81</td><td>3.94</td>
+                <td>14.98</td><td>6.30</td><td>5.42</td>
+                <td>5.40</td><td>2.40</td><td>1.94</td>
+              </tr>
+              <tr>
+                <td>Sana</td>
+                <td>1024</td>
+                <td><span class="model-type">DM</span></td>
+                <td>67.31</td><td>23.68</td><td>15.48</td>
+                <td>17.04</td><td>7.41</td><td>6.09</td>
+                <td>13.22</td><td>4.38</td><td>3.50</td>
+                <td>20.64</td><td>8.68</td><td>7.46</td>
+                <td>9.00</td><td>4.20</td><td>3.44</td>
+              </tr>
+              <tr>
+                <td>Bagel</td>
+                <td>1024</td>
+                <td><span class="model-type">CoT</span></td>
+                <td>67.05</td><td>22.59</td><td>14.76</td>
+                <td>19.44</td><td>4.62</td><td>3.81</td>
+                <td>12.04</td><td>4.69</td><td>3.81</td>
+                <td>26.29</td><td>11.50</td><td>9.80</td>
+                <td>10.80</td><td>5.40</td><td>2.92</td>
+              </tr>
+              <tr>
+                <td>FLUX.2</td>
+                <td>1024</td>
+                <td><span class="model-type">DM</span></td>
+                <td>66.42</td><td class="rank-2">38.67</td><td>32.45</td>
+                <td class="rank-2">35.82</td><td class="rank-3">17.34</td><td class="rank-3">13.21</td>
+                <td class="rank-2">24.67</td><td class="rank-3">10.82</td><td class="rank-3">8.43</td>
+                <td class="rank-3">28.94</td><td class="rank-2">24.18</td><td class="rank-2">17.65</td>
+                <td class="rank-2">48.72</td><td class="rank-2">39.29</td><td class="rank-2">42.67</td>
+              </tr>
+              <tr>
+                <td>Flux</td>
+                <td>1024</td>
+                <td><span class="model-type">DM</span></td>
+                <td>65.10</td><td>21.93</td><td>14.33</td>
+                <td>15.78</td><td>6.87</td><td>5.64</td>
+                <td>12.24</td><td>4.06</td><td>3.25</td>
+                <td>28.27</td><td>11.89</td><td>10.22</td>
+                <td>4.80</td><td>2.40</td><td>1.88</td>
+              </tr>
+              <tr>
+                <td>SD 3</td>
+                <td>1024</td>
+                <td><span class="model-type">DM</span></td>
+                <td>65.10</td><td>23.72</td><td>16.30</td>
+                <td>16.20</td><td>7.41</td><td>6.45</td>
+                <td>12.58</td><td>2.69</td><td>2.19</td>
+                <td>18.94</td><td>7.97</td><td>6.85</td>
+                <td>6.00</td><td>3.00</td><td>2.24</td>
+              </tr>
+              <tr>
+                <td>OmniGen2</td>
+                <td>512</td>
+                <td><span class="model-type">AR</span></td>
+                <td>63.80</td><td>8.45</td><td>14.04</td>
+                <td>21.06</td><td>9.18</td><td>7.53</td>
+                <td>14.70</td><td>5.06</td><td>3.44</td>
+                <td>26.29</td><td>11.06</td><td>9.50</td>
+                <td>15.00</td><td>7.20</td><td>3.59</td>
+              </tr>
+              <tr>
+                <td>Z-Image</td>
+                <td>1024</td>
+                <td><span class="model-type">DM</span></td>
+                <td>63.27</td><td class="rank-3">35.92</td><td class="rank-2">38.84</td>
+                <td>30.65</td><td>15.47</td><td>12.83</td>
+                <td>19.42</td><td>9.35</td><td>7.64</td>
+                <td>24.56</td><td>15.28</td><td>12.37</td>
+                <td>22.18</td><td>16.92</td><td>12.45</td>
+              </tr>
+              <tr>
+                <td>Blip3o</td>
+                <td>1024</td>
+                <td><span class="model-type">MM</span></td>
+                <td>63.15</td><td>21.27</td><td>13.90</td>
+                <td>11.37</td><td>4.95</td><td>6.45</td>
+                <td>12.28</td><td>3.25</td><td>2.63</td>
+                <td class="rank-2">29.40</td><td>12.37</td><td>10.63</td>
+                <td>21.00</td><td>10.80</td><td>5.88</td>
+              </tr>
+              <tr>
+                <td>Qwen-Image</td>
+                <td>1024</td>
+                <td><span class="model-type">MM</span></td>
+                <td>59.83</td><td>28.45</td><td class="rank-3">34.12</td>
+                <td class="rank-3">33.47</td><td class="rank-2">19.28</td><td class="rank-2">17.63</td>
+                <td class="rank-3">22.35</td><td class="rank-2">14.67</td><td class="rank-2">11.28</td>
+                <td>26.82</td><td class="rank-3">18.93</td><td class="rank-3">14.52</td>
+                <td class="rank-3">25.64</td><td class="rank-3">18.73</td><td class="rank-3">14.26</td>
+              </tr>
+              <tr>
+                <td>Janus Pro</td>
+                <td>384</td>
+                <td><span class="model-type">AR</span></td>
+                <td>46.22</td><td>15.57</td><td>10.17</td>
+                <td>14.13</td><td>6.15</td><td>5.04</td>
+                <td>11.66</td><td>5.19</td><td>4.25</td>
+                <td>26.01</td><td>10.94</td><td>9.40</td>
+                <td>3.00</td><td>1.20</td><td>1.23</td>
+              </tr>
+              <tr>
+                <td>CogView4</td>
+                <td>1024</td>
+                <td><span class="model-type">DM</span></td>
+                <td>44.92</td><td>15.13</td><td>9.89</td>
+                <td>13.44</td><td>5.85</td><td>4.80</td>
+                <td>10.98</td><td>4.44</td><td>3.63</td>
+                <td>17.53</td><td>7.37</td><td>6.34</td>
+                <td>5.40</td><td>2.40</td><td>2.04</td>
               </tr>
             </tbody>
           </table>
+        </div>
+        
+        <div class="leaderboard-legend">
+          <div class="legend-item">
+            <div class="legend-color" style="background: var(--rank-1);"></div>
+            <span>Top</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background: var(--rank-2);"></div>
+            <span>Second Best</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background: var(--rank-3);"></div>
+            <span>Third Best</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1081,21 +1255,19 @@
         Detailed analysis of model behavior across color modifier types and object categories.
       </p>
       
-      <div class="figures-row">
-        <div class="figure">
-          <img src="static/images/mod_l2.jpg" alt="Radar chart showing model performance across different color modifier categories">
-          <div class="figure-caption">
-            <strong>Figure 4: Performance by Color Modifier Type</strong>
-            <p>Radar chart comparing model accuracy across five color categories: Basic Colors, Intermediate Colors, Colors with Light Modifiers (e.g., "light blue"), Dark Modifiers (e.g., "dark green"), and "-ish" Modifiers (e.g., "reddish"). Models show consistent performance on basic colors but struggle with modified color terms.</p>
-          </div>
+      <div class="figure">
+        <img src="static/images/mod_l2.jpg" alt="Radar chart showing model performance across different color modifier categories">
+        <div class="figure-caption">
+          <strong>Figure 4: Performance by Color Modifier Type</strong>
+          <p>Radar chart comparing model accuracy across five color categories: Basic Colors, Intermediate Colors, Colors with Light Modifiers (e.g., "light blue"), Dark Modifiers (e.g., "dark green"), and "-ish" Modifiers (e.g., "reddish"). Models show consistent performance on basic colors but struggle with modified color terms.</p>
         </div>
-        
-        <div class="figure">
-          <img src="static/images/category_accuracy.png" alt="Bar chart showing model accuracy across object categories">
-          <div class="figure-caption">
-            <strong>Figure 5: Accuracy by Object Category</strong>
-            <p>Per-category color generation accuracy across 11 T2I models. Performance varies significantly by object type—"Clothes and Accessories" prove challenging while "Fruits and Vegetables" with strong color priors are easier.</p>
-          </div>
+      </div>
+      
+      <div class="figure">
+        <img src="static/images/category_accuracy.png" alt="Bar chart showing model accuracy across object categories">
+        <div class="figure-caption">
+          <strong>Figure 5: Accuracy by Object Category</strong>
+          <p>Per-category color generation accuracy across 11 T2I models. Performance varies significantly by object type—"Clothes and Accessories" prove challenging while "Fruits and Vegetables" with strong color priors are easier.</p>
         </div>
       </div>
       
